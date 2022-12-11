@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    textarea {
+      width: 100%;
+      height: 400px;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      font-size: 16px;
+      resize: none;
+    }
+
+    input[type="button"] {
+      padding: 6px 10px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="button"][name="bold"] {
+      font-weight: bold;
+    }
+
+    input[type="button"][name="italic"] {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h3>Text Editor</h3>
+
+  <textarea id="editor"></textarea>
+
+  <div>
+    <input type="button" name="bold" value="Bold">
+    <input type="button" name="italic" value="Italic">
+  </div>
+
+  <script>
+    const editor = document.getElementById('editor');
+
+    const boldButton = document.querySelector('input[name="bold"]');
+    const italicButton = document.querySelector('input[name="italic"]');
+
+    boldButton.addEventListener('click', () => {
+      document.execCommand('bold');
+    });
+
+    italicButton.addEventListener('click', () => {
+      document.execCommand('italic');
+    });
+  </script>
+</body>
+</html>

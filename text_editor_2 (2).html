@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    textarea {
+      width: 100%;
+      height: 400px;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      font-size: 16px;
+      resize: none;
+    }
+
+    input[type="button"] {
+      padding: 6px 10px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="button"][name="convert"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    input[type="button"][name="convert"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h3>Text Editor</h3>
+
+  <textarea id="editor"></textarea>
+
+  <div>
+    <input type="button" name="convert" value="Convert to PDF">
+  </div>
+
+  <script>
+    const editor = document.getElementById('editor');
+
+    const convertButton = document.querySelector('input[name="convert"]');
+
+    convertButton.addEventListener('click', () => {
+      const text = editor.value;
+
+      const pdf = new jsPDF();
+      pdf.text(text, 10, 10);
+      pdf.save('text.pdf');
+    });
+  </script>
+</body>
+</html>

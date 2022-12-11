@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game" width="400" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById('game');
+    const ctx = canvas.getContext('2d');
+
+    let x = 0;
+    let y = 0;
+    let speed = 2;
+
+    let shooterX = 0;
+    let shooterY = 350;
+    let shooterSpeed = 5;
+
+    let score = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.fillRect(x, y, 50, 50);
+
+      ctx.fillStyle = '#0000ff';
+      ctx.fillRect(shooterX, shooterY, 50, 50);
+
+      if (x > shooterX && x < shooterX + 50 && y > shooterY && y < shooterY + 50) {
+        score += 1;
+        x = 0;
+      }
+
+      x += speed;
+
+      if (x > canvas.width || x < 0) {
+        speed = -speed;
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') {
+          shooterX += shooterSpeed;
+        }
+        if (event.key === 'ArrowLeft') {
+          shooterX -= shooterSpeed;
+        }
+      });
+
+      ctx.font = '24px serif';
+      ctx.fillStyle = 'black';
+      ctx.fillText(`Score: ${score}`, 10, 25);
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  </script>
+</body>
+</html>

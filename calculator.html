@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    input[type="number"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Calculator</h3>
+
+  <form>
+    <div>
+      <label for="num1">Number 1:</label>
+      <input type="number" id="num1" name="num1">
+    </div>
+    <div>
+      <label for="num2">Number 2:</label>
+      <input type="number" id="num2" name="num2">
+    </div>
+    <div>
+      <label for="operator">Operator:</label>
+      <select id="operator" name="operator">
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="multiply">*</option>
+        <option value="divide">/</option>
+      </select>
+    </div>
+    <div>
+      <input type="submit" value="Calculate">
+    </div>
+  </form>
+
+  <p>Result: <span id="result"></span></p>
+
+  <script>
+    const form = document.querySelector('form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const num1 = Number(form.num1.value);
+      const num2 = Number(form.num2.value);
+      const operator = form.operator.value;
+
+      if (operator === 'add') {
+        result.innerText = num1 + num2;
+      } else if (operator === 'subtract') {
+        result.innerText = num1 - num2;
+      } else if (operator === 'multiply') {
+        result.innerText = num1 * num2;
+      } else if (operator === 'divide') {
+        result.innerText = num1 / num2;
+      }
+    });
+  </script>
+</body>
+</html>
