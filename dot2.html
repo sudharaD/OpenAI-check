@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+
+  <style>
+    body {
+      background-color: white;
+    }
+
+    .dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      border-radius: 50%;
+    }
+
+nav {
+    background-color: lightblue;
+    padding: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+
+  nav a:hover {
+    background-color: blue;
+  }
+  </style>
+</head>
+<body>
+	
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+
+
+  <div class="dot"></div>
+
+  <script>
+    const dot = document.querySelector('.dot');
+
+    // Set the initial position of the dot
+    let x = 0;
+    let y = 0;
+    dot.style.left = x + "px";
+    dot.style.top = y + "px";
+
+    // Listen for keydown events
+    document.addEventListener('keydown', (event) => {
+      if (event.key === "ArrowUp") {
+        // Move the dot up by 10 pixels
+        y -= 10;
+        dot.style.top = y + "px";
+      } else if (event.key === "ArrowDown") {
+        // Move the dot down by 10 pixels
+        y += 10;
+        dot.style.top = y + "px";
+      } else if (event.key === "ArrowLeft") {
+        // Move the dot left by 10 pixels
+        x -= 10;
+        dot.style.left = x + "px";
+      } else if (event.key === "ArrowRight") {
+        // Move the dot right by 10 pixels
+        x += 10;
+        dot.style.left = x + "px";
+      } else if (event.key === " ") {
+        // Change the dot's color to a random color
+        dot.style.backgroundColor = randomColor();
+      }
+    });
+
+    // Generate a random color
+    function randomColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+  </script>
+</body>
+</html>
