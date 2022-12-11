@@ -7,6 +7,24 @@
 
 
   <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  th {
+    background-color: blue;
+    color: white;
+  }
     body {
       background-color: white;
     }
@@ -92,5 +110,148 @@ nav {
       return `rgb(${r}, ${g}, ${b})`;
     }
   </script>
+
+<form>
+  <label>Name:</label><br>
+  <input type="text" name="name"><br>
+  <label>Email:</label><br>
+  <input type="email" name="email"><br>
+  <label>Phone:</label><br>
+  <input type="tel" name="phone"><br>
+  <label>Message:</label><br>
+  <textarea name="message"></textarea><br>
+  <label>Country:</label><br>
+  <select name="country">
+    <option>India</option>
+    <option>United States</option>
+    <option>United Kingdom</option>
+    <option>Australia</option>
+  </select><br>
+  <input type="submit" value="Submit">
+</form>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+  <tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+<tr>
+    <td contenteditable>John Doe</td>
+    <td contenteditable>john.doe@example.com</td>
+    <td contenteditable>+1 555 555 5555</td>
+  </tr>
+  <tr>
+    <td contenteditable>Jane Doe</td>
+    <td contenteditable>jane.doe@example.com</td>
+    <td contenteditable>+1 555 555 5556</td>
+  </tr>
+</table>
+
+<form>
+  <label>Email:</label><br>
+  <input type="email" name="email"><br>
+  <label>Message:</label><br>
+  <textarea name="message"></textarea><br>
+  <a href="mailto:sudharad7@gmail.com?subject=Message from Website&body=Message:%0D%0A%0D%0A[Enter your message here]">Send Message</a>
+</form>
+
+<form>
+  <label>Select a file to upload:</label><br>
+  <input type="file" name="upload"><br>
+  <input type="submit" value="Upload">
+</form>
+
 </body>
 </html>
