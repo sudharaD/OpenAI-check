@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giant Loader</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .loader {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s ease-in-out infinite;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader"></div>
+  <button onclick="changeLoaderColor()">Change Color</button>
+  <script>
+    function changeLoaderColor() {
+      // Generate a random color
+      var color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+      // Get the loader element
+      var loader = document.querySelector(".loader");
+
+      // Set the border-top color of the loader to the random color
+      loader.style.borderTopColor = color;
+    }
+  </script>
+</body>
+</html>
